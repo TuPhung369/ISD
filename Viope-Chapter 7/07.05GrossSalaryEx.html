@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Gross Salary</title>
+<style type="text/css">
+label {
+	display: block;
+	width: 7em;
+	float: left;
+}
+</style>
+
+</head>
+<body>
+	<h3>Gross Salary</h3>
+
+	<form>
+		<p>
+			<label>Hours done: </label> <input type="text" name="hours" id="hours"
+				size="3">  hours
+		</p>
+		<p>
+			<label>Hourly salary: </label> <input type="text" name="hourlySalary"
+				id="hourlySalary" size="8"> euros
+		</p>
+		<p>
+			<input type="button" id="btCalculate" value="Calculate" onClick="showGrossSalary()">
+		</p>
+	</form>
+
+	<!-- This is the target where the JavaScript will write the answer -->
+	<div id="answer"></div>
+	
+	<script src="07.05GrossSalaryEx.js"></script>
+	
+</body>
+</html>
+
+<!-- test example:
+hours = 10, hourlySalary = 15.90 -> Gross salary is 159.00 euros.
+-->
+

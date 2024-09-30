@@ -1,0 +1,54 @@
+<!DOCTYPE html> <!-- Document type declaration -->
+<html lang="en"> <!-- Start of HTML document with language attribute set to English -->
+<head>
+    <meta charset="UTF-8"> <!-- Character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Viewport meta tag -->
+    <title>Object 2</title> <!-- Title of the HTML document -->
+</head>
+<body>
+    <h1>Car Object Array</h1> <!-- Heading -->
+    <div id="output"></div> <!-- Output container -->
+    <script> // Start of JavaScript script
+        function printCars() { // Function to print car details
+            var outputText = ""; // Initialize output text variable
+            var carsarray = [ // Array of car objects
+                {
+                    "make": "Toyota",
+                    "model": "Corolla",
+                    "year": 2020,
+                    "color": "Blue",
+                    "owner": { // Nested owner object
+                        "name": "John",
+                        "age": 30
+                    }
+                },
+                {
+                    "make": "Toyota",
+                    "model": "Corolla",
+                    "year": 2019,
+                    "color": "Red",
+                    "owner": { // Nested owner object
+                        "name": "Tom",
+                        "age": 29
+                    }
+                }
+            ];
+            var car; // Variable to hold each car object in the loop
+            // Loop through each car object and construct output text
+            for (var i = 0; i < carsarray.length; i++) {
+                car = carsarray[i]; // Get current car object
+                outputText +=
+                    "<p>Model: " + car.model +
+                    "<br/>Make: " + car.make +
+                    "<br/>Year: " + car.year +
+                    "<br/>Color: " + car.color +
+                    "<br/>Owner: " + car.owner.name +
+                    "<br/>Age: " + car.owner.age +
+                    "<p/>";
+            }
+            document.getElementById("output").innerHTML = outputText; // Display output text in the output container
+        }
+        printCars(); // Call the printCars function to print car details
+    </script> <!-- End of JavaScript script -->
+</body>
+</html> <!-- End of HTML document -->

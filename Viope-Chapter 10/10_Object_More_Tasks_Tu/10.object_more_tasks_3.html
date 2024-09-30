@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Object Task</title>
+    <link rel="stylesheet" type="text/css" href="10.object_more_tasks_3.css" />
+</head>
+<body>
+    <h1>Object Task 3</h1>
+
+    <p>
+        Complete this program so that it allows the user to add new courses and list courses.<br />
+        The course list should be shown in the following format:<br /><br/>
+        Orientation to Software Engineering (swd1tf001)<br />
+        Java Programming (swd4tf002)<br />
+        Data Management and Databases (swd4tf003)<br /><br />
+    </p>
+
+    <form>
+        <p>
+            <label>Course code: </label>
+            <input type="text" id="txtCourseCode" size="20" />
+        </p>
+        <p>
+            <label>Course name: </label>
+            <input type="text" id="txtCourseName" size="60"/>
+        </p>
+        <p>
+            <input type="button" value="Add course" onclick="addCourse()" />
+            <input type="button" value="List courses" onclick="listCourses()" />
+            <input type="button" value="Sort course array" onclick="sortCourseArray()" />
+        </p>
+    </form>
+
+    <p id="pOutput"></p>
+
+    <script src="10.object_more_tasks_3.js"></script>
+</body>
+</html>

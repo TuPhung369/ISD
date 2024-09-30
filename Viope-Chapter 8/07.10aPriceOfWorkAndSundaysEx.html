@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Repair Work and Sundays</title>
+<style type="text/css">
+label {
+	display: block;
+	width: 5em;
+	float: left;
+}
+</style>
+
+<script src="07.10aPriceOfWorkAndSundaysEx.js"></script>
+</head>
+<body>
+	<h3>Repair Work and Sundays</h3>
+
+	<form>
+		<p>
+			<label>Work Title: </label> <input type="text" name="title" id="title"
+				size="25" onblur="modifyTitle()"> <!-- onfocus: Chrome/supported, Firefox/not supported -->
+		</p>
+		<p>
+			<label>Date: </label> <input type="text" name="date" id="date"
+				size="8"> (dd.MM.yyyy)
+		</p>
+		<p>
+			<label>Start Time: </label> <input type="text" name="startTime" id="startTime"
+				size="5">
+		</p>
+		<p>
+			<label>End Time: </label> <input type="text" name="endTime"
+				id="endTime" size="5">
+		</p>
+		<p>
+			<label>Description: </label>
+			<textarea name="description" id="description" rows="4" cols="40"></textarea>
+		</p>
+		<p>
+			<input type="button"  id="submit" value="Calculate" onClick="calculate()">
+		</p>
+	</form>
+
+	<!-- This is the target where the JavaScript will write the answer -->
+	<div id="answer"></div>
+</body>
+</html>
+
+
+<!-- test example:
+date = 29.03.2020  -> Date 29.03.2020 (Sunday).
+The price of this repair work is 72 euros per hour.
+
+date = 30.03.2020  -> Date 30.03.2020 (work day).
+The price of this repair work is 48 euros per hour.
+-->

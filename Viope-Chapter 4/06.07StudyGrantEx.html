@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Study Grant</title>
+<style type="text/css">
+label {
+	display: block;
+	width: 6em;
+	float: left;
+}
+</style>
+<script src="06.07StudyGrantEx.js">
+</script>
+</head>
+<body>
+	<h3>Study Grant</h3>
+
+	<form>
+		<p>
+			<label>Age: </label> <input type="text" name="age" id="age" size="3">
+		</p>
+		<p>
+			<label>With Parents (y/n): </label> <input type="text" name="withParents"
+				id="withParents" size="1">
+		</p>
+		<input type="button" id="submit" value="Show Study Grant" onClick="showStudyGrant()">
+	</form>
+
+	<!-- This is the target where the JavaScript will write the answer -->
+	<div id="answer"></div>
+</body>
+</html>
+
+<!-- test example:
+age = 20, withParents = n -> studyGrant= 335.20 euros
+age = 20, withParents = y ->  studyGrant= 136.70 euros
+age = 18, withParents = y -> studyGrant=Ask Kela
+-->

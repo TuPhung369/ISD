@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cities and Temperatures</title>
+    <link rel="stylesheet" href="City_Temperature.css">
+</head>
+<body>
+    <h1>Cities and Temperatures</h1>
+    <div>
+        <h2>Add City</h2>
+        <div class="input-row">
+            <select id="citySelect">
+                <option value="">Select a city...</option>
+                <option value="Helsinki">Helsinki</option>
+                <option value="Espoo">Espoo</option>
+                <option value="Vantaa">Vantaa</option>
+                <option value="Tampere">Tampere</option>
+                <option value="Oolu">Oolu</option>
+                <option value="Kerava">Kerava</option>
+                <!-- Add more options as needed -->
+                <option value="other">Other (type manually)</option> <!-- Additional option for manual input -->
+            </select>
+            <div class="input-group">
+                <input type="text" id="cityNameOther" placeholder="Enter city name">
+                <input type="number" id="cityTemperature" placeholder="Temperature">
+            </div>
+            <button onclick="addCity()">Add</button>
+        </div>
+    </div>
+    <div>
+        <h2>Cities</h2>
+        <ul id="cityList"></ul> <!-- Display cities in a list format -->
+    </div>
+    <div id="temperatureStats">
+        <h2>Temperature Statistics</h2>
+        <p>Average Temperature: <span id="averageTemperature"></span></p>
+        <p>Hottest City: <span id="hottestCity"></span></p>
+        <p>Coldest City: <span id="coldestCity"></span></p>
+    </div>
+    <script src="City_Temperature.js"></script>
+</body>
+</html>

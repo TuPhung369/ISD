@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Players & Scores - 1st round</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="1st.css">
+</head>
+<body>
+    <h1>Player & Score - 1st round</h1>
+    <p>Players and scores: First version with two separate arrays. 
+        (Second could be with Player objects)</p>
+    <hr /> <!-- ----------------------------------------------- -->
+
+    <p>
+        <span>Enter Name:</span>
+        <input type="text" id="txtName" />
+        <br />
+
+        <span>Enter Score:</span>
+        <input type="text" id="txtScore" />
+        <br />
+
+        <input type="submit" value="Add & Clear" onclick="addPlayer()" />
+    </p>
+    <hr /> <!-- ----------------------------------------------- -->
+
+    <p>
+        <input type="submit" value="LIST" onclick="listPlayers()" />
+    </p>
+    <p id="pOutput"></p>
+
+    <hr /> <!-- ----------------------------------------------- -->
+    
+    <p>
+        <span>Search by Name:</span>
+        <input type="text" id="txtSearchName" />
+        <input type="submit" value="Search" onclick="searchPlayer()" />
+    </p>
+    <p id="pOutput2"></p>
+
+    <hr /> <!-- ----------------------------------------------- -->
+
+    <p>
+        <input type="submit" value="Show Winner" onclick="findWinner()" />
+    </p>
+    <p id="pOutput3"></p>
+
+    <hr /> <!-- ----------------------------------------------- -->
+<script src="1st.js"> </script>
+</body>
+</html>

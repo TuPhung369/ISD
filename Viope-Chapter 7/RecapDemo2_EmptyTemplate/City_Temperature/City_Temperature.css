@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+div {
+    margin-bottom: 15px;
+}
+
+.input-row {
+    font-size: 16px;
+    display: flex;
+    align-items: center; /* Center items vertically */
+}
+
+.input-group {
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 10px 0; /* Adjust the padding to make the box shorter */
+    display: flex;
+    align-items: center; /* Center items vertically */
+}
+
+.input-group input[type="text"], .input-group input[type="number"], button, select {
+    margin-right: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px; /* Adjust the font size as needed */
+    height: 40px; /* Adjust the height to match */
+}
+
+select {
+    width: 200px; /* Adjust the width as needed */
+}
+
+button {
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#temperatureStats {
+    margin-top: 20px;
+}
+
+#temperatureStats p {
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+#averageTemperature {
+    color: #FF5733; /* Orange color */
+}
+
+#hottestCity, #coldestCity {
+    color: #FF3333; /* Red color */
+}
+
+#cityNameOther {
+    display: none; /* Initially hide manual input */
+}
+
+#cityTemperature {
+    margin-left: 0; /* Adjust the left margin to align with the select */
+}

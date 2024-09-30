@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Identity Number</title>
+
+<script src="13.03IndentityCodeEx.js"></script>
+</head>
+<body>
+	<h3>Identity Number</h3>
+
+	<form>
+		<label>Identity Number: </label> <input type="text" name="identityNumber" id="identityNumber"
+			size="11"> <input type="button" value="Show" id="submit"
+			onClick="show()">
+	</form>
+
+	<!-- This is the target where the JavaScript will write the answer -->
+	<div id="answer"></div>
+</body>
+</html>
+
+<!-- test example:
+identityNumber = 241289-123A -> Male, born 24.12.1989
+identityNumber = 280210A122B -> Female, born 28.02.2010	
+identityNumber = 150989+1239 -> Male, born 15.09.1889 			
+-->

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <!-- Heading -->
+    <h1>Student Object</h1>
+    <!-- Instruction for console -->
+    <p>See Console (Press F12)</p>
+    <!-- Output div -->
+    <div id="output"></div>
+    <!-- JavaScript script -->
+    <script>
+        // Define the student object with various properties and methods
+        var student = {
+            firstName: 'Tom', // First name
+            lastName: 'Smith', // Last name
+            yearOfBirth: 1990, // Year of birth
+            gender: 'male', // Gender
+            address: 'Juustenite 3, 00410 Helsinkiville', // Address
+            country: 'Finland', // Country
+            favoriteColors: ['Red', 'Yellow'], // Favorite colors array
+            
+            // Method to calculate age based on year of birth
+            getAge: function() {
+                return new Date().getFullYear() - this.yearOfBirth;
+            }
+        }
+
+        // Add a new property to the student object
+        student.favoriteSport = "swimming"; // Favorite sport
+
+        // Log age, favorite colors, and favorite sport to the console
+        console.log(student.getAge()); // Log age
+        console.log(student.favoriteColors); // Log favorite colors
+        console.log(student.favoriteSport); // Log favorite sport
+
+        // Display student's full name and age on the webpage
+        document.getElementById("output").innerHTML = 
+            student.firstName + " " + student.lastName + ": " + student.getAge() + " years old";
+
+    </script>
+</body>
+</html>

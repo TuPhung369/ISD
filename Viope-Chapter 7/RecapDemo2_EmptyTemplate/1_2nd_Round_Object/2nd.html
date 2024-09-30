@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Players & Scores - 2nd round</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="2nd.css">
+</head>
+<body>
+    <h1>Players & Scores - 2nd round</h1>
+    <p>Enter Name and Score</p>
+    <hr />
+
+    <p>
+        <span>Enter the player information:</span>
+        <input type="text" id="txtPlayerInfo" placeholder="Name:Score" />
+        <br />
+
+        <input type="submit" value="Add player" onclick="addPlayer()" />
+    </p>
+    <hr />
+
+    <p>
+        <input type="submit" value="List players" onclick="listPlayers()" />
+    </p>
+    <p id="pOutput"></p>
+
+    <p>
+        <span>Search by Name:</span>
+        <input type="text" id="txtSearchName" />
+        <input type="submit" value="Search" onclick="searchPlayer()" />
+    </p>
+    <p id="pOutput2"></p>
+
+    <p>
+        <input type="submit" value="Find winner" onclick="findWinner()" />
+    </p>
+    
+    <p id="pOutput3"></p>
+    <script src="2nd.js"></script>
+</body>
+</html>

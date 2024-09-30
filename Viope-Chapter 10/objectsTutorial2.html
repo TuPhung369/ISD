@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>My Library</title>
+
+<script src="usingObjectWithMethod.js"></script>
+<style>
+	td {
+	  text-align: center;
+	}
+</style>
+
+</head>
+<body>
+	<h3>My books</h3>
+
+	<form>
+        <input type="button"  value="List of books"   onClick="bookList()">
+	</form>
+
+	
+	<div>
+		<fieldset>
+			<legend>List of books</legend>
+			<div id="listOfbooks">
+			</div>
+		</fieldset>
+		
+	</div>
+
+	<div>		
+		<form method="post">
+			<fieldset>
+				<legend>Add a book</legend>
+						<label>Book Name:</label><input type="text" id="txtBookName" ></input><br>
+						<label>Author Name:</label><input type="text" id="txtAuthorName"></input><br>
+						<label>Good read rate:</label><input type="text" id="txtRate"></input><br>
+						<label>publish year</label><input type="text" id="txtYear"></input><br>
+						<input type="button"  value="Add book"   onClick="addBook()">
+					</div>
+			</fieldset>
+		</form>
+	</div>
+
+
+</body>
+</html>

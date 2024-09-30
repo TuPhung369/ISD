@@ -1,0 +1,65 @@
+﻿var speciesArray = ["Pike","Salmon","Salmon","Trout"];
+var lengths = [40, 71, 76, 22];
+var weights = [4.925, 3.675, 5.400, 1.510];
+
+// ----------------------------------------------------------------------------
+function addFish() {
+  // Read input
+  var species = document.getElementById("txtSpecies").value;
+  var length = parseFloat(document.getElementById("txtLength").value);
+  var weight = parseFloat(document.getElementById("txtWeight").value);
+  if (species !== "" && !isNaN(length) && !isNaN(weight)){
+    // Add fish to arrays
+    speciesArray.push(species);
+    lengths.push(length);
+    weights.push(weight);
+
+    // Clear input fields
+    document.getElementById("txtSpecies").value = "";
+    document.getElementById("txtLength").value = "";
+    document.getElementById("txtWeight").value = "";
+
+    // Output success message
+    document.getElementById("pOutput1").innerHTML = "Fish added successfully.";
+  } else{
+      alert("Invalid input.");
+  }
+}
+
+// ----------------------------------------------------------------------------
+function listAllCatch() {
+  var outputText = "<strong>All Catches:</strong><br>";
+  for (var i = 0; i < speciesArray.length; i++) {
+    outputText += speciesArray[i] + ": " + lengths[i] + "cm, " + weights[i] + "kg<br>";
+  }
+  document.getElementById("pOutput2").innerHTML = outputText;
+}
+
+// ----------------------------------------------------------------------------
+function showAverageWeight() {
+  var totalWeight = 0;
+  for (var i = 0; i < weights.length; i++) {
+    totalWeight += weights[i];
+  }
+  var averageWeight = totalWeight / weights.length;
+  document.getElementById("pOutput3").innerHTML = "<strong>Average Weight:</strong> " + averageWeight.toFixed(2) + "kg";
+}
+
+// ----------------------------------------------------------------------------
+function findFish() {
+
+}
+
+// ----------------------------------------------------------------------------
+function maxWeightFreshmanWay() {
+
+}
+
+// ----------------------------------------------------------------------------
+function maxWeightUsingIndex() {
+ 
+}
+
+function convertKgToLbs(kilograms) {
+
+}

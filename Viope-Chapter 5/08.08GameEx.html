@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Game</title>
+
+<script src="08.08GameEx.js">
+</script>
+</head>
+<body>
+	<h3>Game</h3>
+
+	<form>
+		<label>Rounds: </label> <input type="text" name="rounds"
+			id="rounds" size="3"> <input type="button" id="submit" value="Play"
+			onClick="calculateProfit()">
+	</form>
+
+	<!-- This is the target where the JavaScript will write the answer -->
+	<div id="answer"></div>
+</body>
+</html>
+
+<!-- test example ((You will not get exactly same values as the result is random)):
+rounds = 500 -> Bets were altogether 500.00 euros
+				Wins were 344.75 euros
+				Profit was 155.25 euros
+				
+rounds = 500 -> Bets were altogether 500.00 euros
+				Wins were 322.00 euros
+				Profit was 178.00 euros				
+				
+-->
+
+

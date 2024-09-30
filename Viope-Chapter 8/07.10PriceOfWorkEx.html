@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Repair Work</title>
+<style type="text/css">
+label {
+	display: block;
+	width: 5em;
+	float: left;
+}
+</style>
+
+<script src="07.10PriceOfWorkEx.js"></script>
+</head>
+<body>
+	<h3>Repair Work</h3>
+
+	<form>
+		<p>
+			<label>Work Title: </label> <input type="text" name="title" id="title"
+				size="25" onblur="modifyTitle()"> <!-- onfocus: Chrome/supported, Firefox/not supported -->
+		</p>
+		<p>
+			<label>Date: </label> <input type="text" name="date" id="date"
+				size="8">
+		</p>
+		<p>
+			<label>Start Time: </label> <input type="text" name="startTime" id="startTime"
+				size="5">
+		</p>
+		<p>
+			<label>End Time: </label> <input type="text" name="endTime"
+				id="endTime" size="5">
+		</p>
+		<p>
+			<label>Description: </label>
+			<textarea name="description" id="description" rows="4" cols="40"></textarea>
+		</p>
+		<p>
+			<input type="button"  id="submit" value="Calculate" onClick="calculate()">
+		</p>
+	</form>
+
+	<!-- This is the target where the JavaScript will write the answer -->
+	<div id="answer"></div>
+</body>
+</html>
+
+
+<!-- test example:
+title = installation, date = 04.04.2015, start time = 12:08, end time =13:55  -> Length of the work was 107 minutes. 
+	The hourly price is 48.00 euros during the workdays. 
+	The price of this repair work is 85.60 euros.
+
+title = installation, date = 05.04.2015, start time = 12:08, end time =13:55  -> Length of the work was 107 minutes. 
+	The hourly price is 72.00 euros during the Sundays. 
+	The price of this repair work is 128.40 euros.
+-->

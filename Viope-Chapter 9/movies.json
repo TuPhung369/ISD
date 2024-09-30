@@ -1,0 +1,22 @@
+[
+    {
+      "name": "Titanic",
+      "publishing_year": 1997,
+      "description": "A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic."
+    },
+    {
+      "name": "Harry Potter and the Philosopher's Stone",
+      "publishing_year": 2001,
+      "description": "An orphaned boy enrolls in a school of wizardry, where he learns the truth about himself, his family and the terrible evil that haunts the magical world."
+    },
+    {
+      "name": "Despicable Me",
+      "publishing_year": 2010,
+      "description": "When a criminal mastermind uses a trio of orphan girls as pawns for a grand scheme, he finds their love is profoundly changing him for the better."
+    },
+    {
+      "name": "Hero",
+      "publishing_year": 2002,
+      "description": "A defense officer, Nameless, was summoned by the King of Qin regarding his success of terminating three warriors."
+    }
+  ]  

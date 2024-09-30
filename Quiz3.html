@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>JavaScript Functions</h1>
+
+    <p>Call a function which performs a calculation and returns the result:</p>
+    <span>Name: </span>
+    <input type="text" id="textname" name="name" placeholder="Name:...">
+    <span>Age: </span>
+    <input type="text" id="textage" name="age" placeholder="Age...">
+    <span>Height: </span>
+    <input type="text" id="textheight" name="height" placeholder="height">
+    <input type="button" value="Add List" onclick="Addlist()">
+    <input type="button" value="Show List" onclick="showList()">
+    <p id="outPut1"></p>
+
+    <input type="text" id="textsearch" name="search on the list" placeholder="searchName...">
+    <input type="button" value="Search" onclick="searchName()">
+    <p id="outPut2"></p>
+
+    <input type="button" value="Average Age" onclick="averageAge()">
+    <input type="button" value="Average Height" onclick="averageHeight()">
+    <p id="outPut3"></p>
+    <p id="outPut4"></p>
+
+    <input type="button" value="Oldest People" onclick="oldestAge()">
+    <input type="button" value="Tallest People" onclick="tallestHeight()">
+    <input type="button" value="Youngest People" onclick="youngestAge()">
+    <input type="button" value="Shortest People" onclick="shortestHeight()">
+    <p id="outPut5"></p>
+    <p id="outPut6"></p>
+    <p id="outPut7"></p>
+    <p id="outPut8"></p>
+
+    <input type="button" value="Arrange Ages from S-L" onclick="sortNumberAscending(Ages,'Ages')">
+    <input type="button" value="Arrange Height from S-L" onclick="sortNumberAscending(Heights,'Height')">
+    <input type="button" value="Arrange Ages from L-S" onclick="sortNumberDescending(Ages,'Ages')">
+    <input type="button" value="Arrange Height from L-S" onclick="sortNumberDescending(Heights,'Height')">
+    <p id="outPut9"></p>
+
+    <script>
+        var outPutaddList = [];
+        var List = ["Tu", "Tom", "Tam", "Top"];
+        var Ages = [34, 36, 43, 16];
+        var Heights = [176, 187, 30, 172];
+
+        function Addlist() { // Add parentheses here
+            var name = document.getElementById("textname").value;
+            var age = parseFloat(document.getElementById("textage").value);
+            var height = parseFloat(document.getElementById("textheight").value);
+
+            if (name != "" && !isNaN(age) && !isNaN(height)) {
+                List.push(name.trim());
+                Ages.push(age);
+                Heights.push(height);
+                //clear the input fields
+                document.getElementById("textname").value = "";
+                document.getElementById("textage").value = "";
+                document.getElementById("textheight").value = "";
+                outPutaddList = "<em>Added</em> to the list";
+            } else {
+                alert("Invalid Input");
+            }
+            document.getElementById("outPut1").innerHTML = outPutaddList;
+        }
+
+        function showList() {
+            outPutaddList = "<strong>List of People: </strong><br>"; // Reset the output each time
+            for (let i = 0; i < List.length; i++) {
+                outPutaddList += (i + 1) + ". Name: " + List[i] + " - Age: " + Ages[i] + " - Height: " + Heights[i] + "cm<br>"; // Add space and period after the index
+            }
+            document.getElementById("outPut1").innerHTML = outPutaddList;
+        }
+
+        function searchName() {
+            var searchvalue = document.getElementById("textsearch").value.trim();
+            if (searchvalue != "") {
+                var ListSearch = [];
+                for (let i = 0; i < List.length; i++) {
+                    if (List[i].toLowerCase() === searchvalue.toLowerCase()) {
+                        ListSearch.push({ Name: List[i], Age: Ages[i], Height: Heights[i] });
+                    }
+                }
+                if (ListSearch.length > 0) {
+                    outPutaddList = "<strong>Found: </strong>\"" + searchvalue + "\" into list:<br>"; // Reset the output each time
+                    for (let i = 0; i < ListSearch.length; i++) {
+                        outPutaddList += "Name: " + ListSearch[i].Name + " - Age: " + ListSearch[i].Age + " - Height: " + ListSearch[i].Height + "<br>";
+                    }
+                    document.getElementById("outPut2").innerHTML = outPutaddList;
+                } else {
+                    outPutaddList = "No matching name found in the list.";
+                }
+            } else {
+                alert("Please input the name for searching!");
+            }
+        }
+
+        function averageAge() {
+            var totalAge = 0;
+            for (let i = 0; i < Ages.length; i++) {
+                totalAge += Ages[i];
+            }
+            var averageAge = totalAge / Ages.length;
+            document.getElementById("outPut3").innerHTML = "<strong>Average Age: </strong>" + averageAge + " age";
+        }
+
+        function averageHeight() {
+            var totalHeight = 0;
+            for (let i = 0; i < Heights.length; i++) {
+                totalHeight += Heights[i];
+            }
+            var averageHeight = totalHeight / Heights.length;
+            document.getElementById("outPut4").innerHTML = "<strong>Average Height: </strong>" + averageHeight + " cm";
+        }
+
+        function oldestAge() {
+            var maxAge = Ages[0];
+            for (let i = 0; i < Ages.length; i++) {
+                if (Ages[i] > maxAge) {
+                    maxAge = Ages[i];
+                }
+            }
+            var maxAgeList = [];
+            for (let i = 0; i < Ages.length; i++) {
+                if (Ages[i] == maxAge) {
+                    maxAgeList.push({ Name: List[i], Age: Ages[i], Height: Heights[i] });
+                }
+            }
+            outPutaddList = "<strong>List of Oldest People: </strong><br>";
+            for (let i = 0; i < maxAgeList.length; i++) {
+                outPutaddList += (i + 1) + ". <em>Name: </em>" + maxAgeList[i].Name + " - <em>Age: </em>" + maxAgeList[i].Age + " age - <em>Height: </em>" + maxAgeList[i].Height + " cm<br>";
+            }
+            document.getElementById("outPut5").innerHTML = outPutaddList;
+        }
+        function youngestAge() {
+            var minAge = Ages[0];
+            for (let i = 0; i < Ages.length; i++) {
+                if (Ages[i] < minAge) {
+                    minAge = Ages[i];
+                }
+            }
+            var minAgeList = [];
+            for (let i = 0; i < Ages.length; i++) {
+                if (Ages[i] == minAge) {
+                    minAgeList.push({ Name: List[i], Age: Ages[i], Height: Heights[i] });
+                }
+            }
+            outPutaddList = "<strong>List of Youngest People: </strong><br>";
+            for (let i = 0; i < minAgeList.length; i++) {
+                outPutaddList += (i + 1) + ". <em>Name: </em>" + minAgeList[i].Name + " - <em>Age: </em>" + minAgeList[i].Age + " age - <em>Height: </em>" + minAgeList[i].Height + " cm<br>";
+            }
+            document.getElementById("outPut6").innerHTML = outPutaddList;
+        }
+        function tallestHeight() {
+            var maxHeight = Heights[0];
+            for (let i = 0; i < Heights.length; i++) {
+                if (Heights[i] > maxHeight) {
+                    maxHeight = Heights[i];
+                }
+            }
+            var maxHeightList = [];
+            for (let i = 0; i < Heights.length; i++) {
+                if (Heights[i] == maxHeight) {
+                    maxHeightList.push({ Name: List[i], Age: Ages[i], Height: Heights[i] });
+                }
+            }
+            outPutaddList = "<strong>List of Tallest People: </strong><br>";
+            for (let i = 0; i < maxHeightList.length; i++) {
+                outPutaddList += (i + 1) + ". <em>Name: </em>" + maxHeightList[i].Name + " - <em>Age: </em>" + maxHeightList[i].Age + " age - <em>Height: </em>" + maxHeightList[i].Height + " cm<br>";
+            }
+            document.getElementById("outPut7").innerHTML = outPutaddList;
+        }
+
+        function shortestHeight() {
+            var minHeight = Heights[0];
+            for (let i = 0; i < Heights.length; i++) {
+                if (Heights[i] < minHeight) {
+                    minHeight = Heights[i];
+                }
+            }
+            var minHeightList = [];
+            for (let i = 0; i < Heights.length; i++) {
+                if (Heights[i] == minHeight) {
+                    minHeightList.push({ Name: List[i], Age: Ages[i], Height: Heights[i] });
+                }
+            }
+            outPutaddList = "<strong>List of Shortest People: </strong><br>";
+            for (let i = 0; i < minHeightList.length; i++) {
+                outPutaddList += (i + 1) + ". <em>Name: </em>" + minHeightList[i].Name + " - <em>Age: </em>" + minHeightList[i].Age + " age - <em>Height: </em>" + minHeightList[i].Height + " cm<br>";
+            }
+            document.getElementById("outPut8").innerHTML = outPutaddList;
+        }
+        function sortNumberAscending(array, arrayname) {
+            var temp = 0;
+            for (let i = 0; i < array.length; i++) {
+                for (let j = 0; j < array.length - 1 - i; j++) {
+                    if (array[j] > array[j + 1]) {
+                        temp = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = temp;
+                    }
+                }
+            }
+            outPutaddList = `<strong>Arrange ${arrayname} from small to large: </strong><br>`;
+            for (let i = 0; i < array.length; i++) {
+                outPutaddList += array[i] + " ";
+            }
+            document.getElementById("outPut9").innerHTML = outPutaddList;
+        }
+
+        function sortNumberDescending(array, arrayname) {
+            var temp = 0;
+            for (let i = 0; i < array.length; i++) {
+                for (let j = 0; j < array.length - 1 - i; j++) {
+                    if (array[j] < array[j + 1]) {
+                        temp = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = temp;
+                    }
+                }
+            }
+            outPutaddList = `<strong>Arrange ${arrayname} from small to large: </strong><br>`;
+            for (let i = 0; i < array.length; i++) {
+                outPutaddList += array[i] + " ";
+            }
+            document.getElementById("outPut9").innerHTML = outPutaddList;
+        }
+    </script>
+
+</body>
+
+</html>

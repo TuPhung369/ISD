@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Cottage rent per participant</title>
+<style type="text/css">
+label {	      <!-- display the labels in a line -->
+	display: inline-block;
+	width: 6em;
+}
+</style>
+<script src="05.09SummerCottageEx.js">	
+</script>
+</head>
+<body>
+	<h3>Cottage rent per participant</h3>
+
+	<form>
+		<p>
+			<label for="rent">Rent: </label> <input type="text" name="rent" id="rent"
+				size="5">
+		</p>
+		<p>
+			<label for="participants">Participants </label> <input type="text" name="participants"
+				id="participants" size="3">
+		</p>
+		<p>
+			<input type="button" id="submit" value="Calculate rent" onClick="calculateRent()">
+		</p>
+	</form>
+
+	<!-- This is the target where the JavaScript will write the answer -->
+	<div id="answerDiv"></div>
+</body>
+</html>
+
+<!-- 
+test cases
+rent 460 participants 5 -> 92.00 euros
+rent 300 participants 5 -> 60.00 euros
+-->
